@@ -1,0 +1,17 @@
+{
+  "name": "f4240nerzy-api",
+  "version": "1.0.0",
+  "description": "node.js rest apis with express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "f4240nerzy",
+    "api"
+  ],
+  "author": "Wojciech Kajstura, Konrad Lubera",
+  "license": "ISC"
+}
