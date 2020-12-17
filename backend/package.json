@@ -1,24 +1,24 @@
 {
-  "name": "f4240nerzy-api",
-  "version": "1.0.0",
-  "description": "node.js rest apis with express",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "nodejs",
-    "express",
-    "f4240nerzy",
-    "api"
-  ],
-  "author": "Wojciech Kajstura, Konrad Lubera",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "mysql2": "^2.2.5",
-    "sequelize": "^6.3.5"
-  }
+    "name": "f4240nerzy-api",
+    "version": "1.0.0",
+    "description": "node.js rest apis with express",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "nodejs",
+        "express",
+        "f4240nerzy",
+        "api"
+    ],
+    "author": "Wojciech Kajstura, Konrad Lubera",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "mysql2": "^2.2.5",
+        "sequelize": "^6.3.5"
+    }
 }
