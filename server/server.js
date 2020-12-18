@@ -10,10 +10,10 @@ var corsOptions = {
 
 app.use(cors(corsOptions));
 
-// parse requests of content-type application/json
+// parse requests of content-type - application/json
 app.use(bodyParser.json());
 
-// parse requests of content-type application/x-www-form-urlencoded
+// parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // call sysc()
@@ -22,13 +22,14 @@ db.sequelize.sync();
 
 // simple route
 app.get("/", (req, res) => {
-    res.json({ message: "Hello world" })
+    res.json({ message: "Welcome to bogo node application." });
 });
 
 // tutorial routes
 require("./app/routes/tutorial.routes.js")(app);
 
+// set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
-    console.log(`server is running on ${PORT}`)
+    console.log(`Server is running on port ${PORT}.`);
 });
