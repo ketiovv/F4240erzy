@@ -28,6 +28,9 @@ db.sequelize.sync();
 // tutorial routes
 require("./app/routes/tutorial.routes.js")(app);
 
+// question routes
+require("./app/routes/question.routes.js")(app);
+
 // set port, listen for requests
 const PORT = process.env.PORT || 8000;
 

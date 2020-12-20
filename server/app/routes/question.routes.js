@@ -7,4 +7,6 @@ module.exports = app => {
 
     // Retrieve all Questions
     router.get("/", questions.findAll);
+
+    app.use('/api/questions', router);
 };
