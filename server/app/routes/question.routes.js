@@ -12,7 +12,7 @@ module.exports = app => {
     router.get("/:id", questions.findOne);
 
     // Retrieve all Questions with stage
-    router.get("/:stage", questions.findByStage);
+    router.get("/stage/:stage", questions.findByStage);
 
     // Update a Question with id
     router.put("/:id", questions.update);
