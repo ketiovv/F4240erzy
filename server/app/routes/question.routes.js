@@ -8,8 +8,11 @@ module.exports = app => {
     // Retrieve all Questions
     router.get("/", questions.findAll);
 
-    // Retrieve a single Tutorial with id
+    // Retrieve a single Questions with id
     router.get("/:id", questions.findOne);
+
+    // Retrieve all Questions with stage
+    router.get("/:stage", questions.findByStage);
 
     // Update a Question with id
     router.put("/:id", questions.update);

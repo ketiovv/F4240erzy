@@ -65,6 +65,20 @@ exports.findOne = (req, res) => {
         });
 };
 
+// Find all Question for stage with an id
+exports.findByStage = (req, res) => {
+    var stage = req.params.stage;
+    Question.findAll({ where: { stage: stage } })
+        .then(data => {
+            res.send(data);
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: err.message || "Some error occurred while retrieving questions."
+            });
+        });
+};
+
 // Update a Question by the id in the request
 exports.update = (req, res) => {
     const id = req.params.id;
