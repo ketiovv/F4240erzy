@@ -8,5 +8,8 @@ module.exports = app => {
     // Retrieve all Questions
     router.get("/", questions.findAll);
 
+    // Retrieve a single Tutorial with id
+    router.get("/:id", questions.findOne);
+
     app.use('/api/questions', router);
 };
