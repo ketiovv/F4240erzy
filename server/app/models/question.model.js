@@ -9,12 +9,6 @@ module.exports = (sequelize, Sequelize) => {
         contentOfQuestion: {
             type: Sequelize.STRING
         },
-        // answers:{
-        // check how to use list of string
-        // },
-        correctAnswer: {
-            type: Sequelize.STRING
-        }
     });
 
     return Question;
