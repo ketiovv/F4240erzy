@@ -11,5 +11,8 @@ module.exports = app => {
     // Retrieve a single Tutorial with id
     router.get("/:id", questions.findOne);
 
+    // Update a Question with id
+    router.put("/:id", questions.update);
+
     app.use('/api/questions', router);
 };

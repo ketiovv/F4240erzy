@@ -64,3 +64,28 @@ exports.findOne = (req, res) => {
             });
         });
 };
+
+// Update a Question by the id in the request
+exports.update = (req, res) => {
+    const id = req.params.id;
+
+    Question.update(req.body, {
+            where: { id: id }
+        })
+        .then(num => {
+            if (num == 1) {
+                res.send({
+                    message: "Question was updated successfully."
+                })
+            } else {
+                res.send({
+                    message: `Cannot update Question with id=${id}. Maybe Tutorial was not found or req.body is empty!`
+                });
+            }
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: "Error updating Question with id=" + id
+            });
+        });
+};
