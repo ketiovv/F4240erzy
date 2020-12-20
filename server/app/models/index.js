@@ -18,5 +18,6 @@ db.answers = require("./answer.model.js")(sequelize, Sequelize);
 
 db.questions.hasMany(db.answers, { as: "answers" });
 db.answers.belongsTo(db.questions, { foreignKey: "questionId", as: "question" });
+// TODO: Delete answers cascade (onDelete: 'cascade') ??
 
 module.exports = db;
