@@ -4,6 +4,7 @@ const cors = require("cors");
 
 const app = express();
 
+// TODO: read about cors
 var corsOptions = {
     origin: "http://localhost:8081"
 };
@@ -18,12 +19,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // call sysc()
 const db = require("./app/models");
+
+// sync all models with db -> auto generate tables
 db.sequelize.sync();
 
-// simple route
-// app.get("/", (req, res) => {
-//     res.json({ message: "Welcome to bogo node application." });
-// });
+// stage routes
+require("./app/routes/stage.routes.js")(app);
 
 // question routes
 require("./app/routes/question.routes.js")(app);

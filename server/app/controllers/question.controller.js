@@ -15,7 +15,7 @@ exports.create = (req, res) => {
 
     // Create Question
     const question = {
-        stage: req.body.stage,
+        stageId: req.body.stageId,
         contentOfQuestion: req.body.contentOfQuestion
     }
 
@@ -67,8 +67,8 @@ exports.findOne = (req, res) => {
 
 // Find all Question for stage with an id
 exports.findByStage = (req, res) => {
-    var stage = req.params.stage;
-    Question.findAll({ where: { stage: stage } })
+    var stageId = req.params.stageId;
+    Question.findAll({ where: { stageId: stageId } })
         .then(data => {
             res.send(data);
         })
