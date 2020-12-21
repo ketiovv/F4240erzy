@@ -3,7 +3,7 @@ version: "3.4"
 x-common-variables: &common-variables
   MYSQL_USER: sampleuser
   MYSQL_PASSWORD: samplepassword
-  MYSQL_DATABASE: testdb
+  MYSQL_DATABASE: F4240erzyDB
 
 services:
   
