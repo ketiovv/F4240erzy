@@ -19,7 +19,7 @@ exports.create = (req, res) => {
     const answer = {
         contentOfAnswer: req.body.contentOfAnswer,
         correct: req.body.correct,
-        answerId: req.body.answerId
+        questionId: req.body.questionId
     }
 
     Answer.create(answer)
