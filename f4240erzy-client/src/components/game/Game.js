@@ -5,15 +5,14 @@ import Stages from '../stages/Stages';
 
 // class component
 function Game (){
-    const [questions, setQuestions] = useState([]);
-    const [answers, setAnswers] = useState([])
-    const [stages, setStages] = useState([])
     const [currentStage, setCurrentStage] = useState(1)
+    const [stages, setStages] = useState([])
+    const [question, setQuestion] = useState(null);
+    const [answers, setAnswers] = useState([])
 
     useEffect(() => {
         getAllStages();
-        getAllQuestions();
-        getAllAnswersToQuestion(10);
+        getQuestionForStage(currentStage);
     },[])
 
     const getAllStages = () => {
@@ -25,14 +24,12 @@ function Game (){
             .catch(console.log)
     }
     
-    // TODO: change it for getQuestionForStage
-    //       with stage as argument   
-    //       but first create endpoint which send random question for this stage
-    const getAllQuestions = () => {
-        fetch('http://localhost:8000/api/questions')
+    const getQuestionForStage = (stageNumber) => {
+        fetch(`http://localhost:8000/api/questions/random/${stageNumber}`)
             .then(res => res.json())
             .then((data) => {
-                setQuestions(data);
+                setQuestion(data);
+                getAllAnswersToQuestion(data.id);
             })
             .catch(console.log)
     }
@@ -49,9 +46,9 @@ function Game (){
     const handleQuestionAnswer = (ifCorrect) => {
         if (ifCorrect == true) {
             alert("nice, next stage!");
-            setCurrentStage(currentStage + 1);
-            // TODO: get and set new question
-            // TODO: get and set new answers
+            const nextStage = currentStage + 1;
+            setCurrentStage(nextStage);
+            getQuestionForStage(nextStage);
         } else {
             alert("przegrałeś");
             setCurrentStage(1);
@@ -63,7 +60,7 @@ function Game (){
             <div className="row">
                 <div className="col-9">
                     <div className="row">
-                        <Question  question={questions[0]} />
+                        <Question question={question} />
                     </div>
                     <div className="row">
                         <Answers answers={answers} handle={ handleQuestionAnswer } />
