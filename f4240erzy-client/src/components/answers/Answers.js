@@ -1,15 +1,18 @@
 import React from 'react'
 import Answer from './Answer'
 
-const Answers = ({ answers }) => {
+function Answers(props) {
         return(
             <div className="container">
                 <div className="row">{
-                    answers.map((answer) => ( 
-                        <Answer content={answer.contentOfAnswer} />
+                    props.answers.map((answer) => ( 
+                        <Answer content={answer.contentOfAnswer} correct={answer.correct} />
                     ))
                 }
-            </div>
+                </div>
+                <div className="row">
+                    <button>test</button>
+                </div>
             </div>
         )
 };

@@ -1,10 +1,15 @@
 import React from 'react'
 import './Answer.css'
 
-const Answer = ({ content }) => {
+const Answer = ({ content, correct, }) => {
+
+    const test = () => {
+        alert(correct)
+    }
+
     return(
         <div className="col-6">
-            <div className="answer">
+            <div className={ correct != true ? "answer" : "answer correct"} onClick={ test }>
                 <h2>
                     {content}
                 </h2>
