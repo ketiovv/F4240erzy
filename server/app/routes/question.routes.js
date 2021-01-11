@@ -14,6 +14,9 @@ module.exports = app => {
     // Retrieve all Questions with stage
     router.get("/stage/:stage", questions.findByStage);
 
+    // Retrieve random Question at stage
+    router.get("/random/:stageId", questions.findOneByStage)
+
     // Update a Question with id
     router.put("/:id", questions.update);
 
