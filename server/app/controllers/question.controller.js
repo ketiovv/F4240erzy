@@ -1,6 +1,8 @@
+const { query } = require("express");
 const db = require("../models");
 const Question = db.questions;
 const Op = db.Sequelize.Op;
+const Sequelize = require("sequelize");
 
 
 // Create and Save a new Question
@@ -77,6 +79,24 @@ exports.findByStage = (req, res) => {
                 message: err.message || "Some error occurred while retrieving questions."
             });
         });
+};
+
+// Find a single random Question for stage with an id
+exports.findOneByStage = (req, res) => {
+    var stageId = req.params.stageId;
+    Question.findOne({
+            where: { stageId: stageId },
+            order: [Sequelize.fn('RAND')]
+        })
+        .then(data => {
+            res.send(data);
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: err.message || "Some error occured while retrieving random question in stage"
+            });
+        });
+
 };
 
 // Update a Question by the id in the request
