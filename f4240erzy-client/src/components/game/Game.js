@@ -36,6 +36,16 @@ function Game (){
         .catch(console.log)
     },[])
 
+    const HandleQuestionAnswer = (ifCorrect) => {
+        if (ifCorrect == true) {
+            alert("nice, next stage!");
+            setCurrentStage(currentStage + 1);
+        } else {
+            alert("przegrałeś");
+            setCurrentStage(1);
+        }
+    }
+
     return(
         <div className="container-fluid"> 
             <div className="row">
