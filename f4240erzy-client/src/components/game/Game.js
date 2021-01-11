@@ -25,6 +25,9 @@ function Game (){
             .catch(console.log)
     }
     
+    // TODO: change it for getQuestionForStage
+    //       with stage as argument   
+    //       but first create endpoint which send random question for this stage
     const getAllQuestions = () => {
         fetch('http://localhost:8000/api/questions')
             .then(res => res.json())
@@ -47,7 +50,8 @@ function Game (){
         if (ifCorrect == true) {
             alert("nice, next stage!");
             setCurrentStage(currentStage + 1);
-            // 
+            // TODO: get and set new question
+            // TODO: get and set new answers
         } else {
             alert("przegrałeś");
             setCurrentStage(1);
