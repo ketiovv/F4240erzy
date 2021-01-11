@@ -11,35 +11,43 @@ function Game (){
     const [currentStage, setCurrentStage] = useState(1)
 
     useEffect(() => {
-        // get all questions to variable
-        fetch('http://localhost:8000/api/questions')
-        .then(res => res.json())
-        .then((data) => {
-            setQuestions(data);
-        })
-        .catch(console.log)
+        getAllStages();
+        getAllQuestions();
+        getAllAnswersToQuestion(10);
+    },[])
 
-        // get all stages to variable
+    const getAllStages = () => {
         fetch('http://localhost:8000/api/stages')
             .then(res => res.json())
             .then((data) => {
                 setStages(data)
             })
             .catch(console.log)
+    }
+    
+    const getAllQuestions = () => {
+        fetch('http://localhost:8000/api/questions')
+            .then(res => res.json())
+            .then((data) => {
+                setQuestions(data);
+            })
+            .catch(console.log)
+    }
 
-        // get all anwers for question with id to variable
-        fetch('http://localhost:8000/api/answers/question/10')
-        .then(res => res.json())
-        .then((data) => {
-            setAnswers(data)
-        })
-        .catch(console.log)
-    },[])
+    const getAllAnswersToQuestion = (questionId) => {
+        fetch(`http://localhost:8000/api/answers/question/${questionId}`)
+            .then(res => res.json())
+            .then((data) => {
+                setAnswers(data)
+            })
+            .catch(console.log)
+    }
 
-    const HandleQuestionAnswer = (ifCorrect) => {
+    const handleQuestionAnswer = (ifCorrect) => {
         if (ifCorrect == true) {
             alert("nice, next stage!");
             setCurrentStage(currentStage + 1);
+            // 
         } else {
             alert("przegrałeś");
             setCurrentStage(1);
@@ -54,7 +62,7 @@ function Game (){
                         <Question  question={questions[0]} />
                     </div>
                     <div className="row">
-                        <Answers answers={answers} handle={ HandleQuestionAnswer } />
+                        <Answers answers={answers} handle={ handleQuestionAnswer } />
                     </div>
                 </div>
                 <div className="col-3">
