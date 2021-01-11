@@ -54,7 +54,7 @@ function Game (){
                         <Question  question={questions[0]} />
                     </div>
                     <div className="row">
-                        <Answers answers={answers} />
+                        <Answers answers={answers} handle={ HandleQuestionAnswer } />
                     </div>
                 </div>
                 <div className="col-3">
