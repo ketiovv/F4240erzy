@@ -1,30 +1,29 @@
-import React, {Component} from 'react';
+import React, { useEffect, useState }  from 'react';
 import Answers from '../answers/Answers';
 import Question from '../questions/Question';
 import Stages from '../stages/Stages';
 
 // class component
-class Game extends React.Component{
-    state = { 
-        questions: [],
-        answers:[],
-        stages:[],
-    }
+function Game (){
+    const [questions, setQuestions] = useState([]);
+    const [answers, setAnswers] = useState([])
+    const [stages, setStages] = useState([])
+    const [currentStage, setCurrentStage] = useState(1)
 
-    componentDidMount() {
+    useEffect(() => {
         // get all questions to variable
         fetch('http://localhost:8000/api/questions')
-            .then(res => res.json())
-            .then((data) => {
-                this.setState({ questions: data })
-            })
-            .catch(console.log)
+        .then(res => res.json())
+        .then((data) => {
+            setQuestions(data);
+        })
+        .catch(console.log)
 
         // get all stages to variable
         fetch('http://localhost:8000/api/stages')
             .then(res => res.json())
             .then((data) => {
-                this.setState({ stages: data })
+                setStages(data)
             })
             .catch(console.log)
 
@@ -32,30 +31,28 @@ class Game extends React.Component{
         fetch('http://localhost:8000/api/answers/question/10')
         .then(res => res.json())
         .then((data) => {
-            this.setState({ answers: data })
+            setAnswers(data)
         })
         .catch(console.log)
-    }
-    
-    render (){
-        return(
-            <div className="container-fluid"> 
+    },[])
+
+    return(
+        <div className="container-fluid"> 
             <div className="row">
                 <div className="col-9">
                     <div className="row">
-                        <Question  question={this.state.questions[0]} />
+                        <Question  question={questions[0]} />
                     </div>
                     <div className="row">
-                        <Answers answers={this.state.answers} />
+                        <Answers answers={answers} />
                     </div>
                 </div>
                 <div className="col-3">
-                    <Stages stages={this.state.stages} currentStageNumber="1" />
+                    <Stages stages={stages} currentStageNumber={currentStage} />
                 </div>
             </div>
         </div>
-        );
-    }
+    );
 }
 
 export default Game
