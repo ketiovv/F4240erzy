@@ -2,6 +2,7 @@ import React, { useEffect, useState }  from 'react';
 import Answers from '../answers/Answers';
 import Question from '../questions/Question';
 import Stages from '../stages/Stages';
+import "./Game.css"
 
 // class component
 function Game (){
@@ -45,20 +46,27 @@ function Game (){
 
     const handleQuestionAnswer = (ifCorrect) => {
         if (ifCorrect == true) {
-            alert("nice, next stage!");
-            const nextStage = currentStage + 1;
-            setCurrentStage(nextStage);
-            getQuestionForStage(nextStage);
+            if (currentStage < 12) {
+                const nextStage = currentStage + 1;
+                setCurrentStage(nextStage);
+                getQuestionForStage(nextStage);
+            }
+            else{
+                alert("wygrales")
+                const nextStage = 1;
+                setCurrentStage(nextStage);
+                getQuestionForStage(nextStage);
+            }
         } else {
-            alert("przegrałeś");
             setCurrentStage(1);
+            getQuestionForStage(1);
         }
     }
 
     return(
         <div className="container-fluid"> 
             <div className="row">
-                <div className="col-9">
+                <div className="col-sm-12 col-md-9">
                     <div className="row">
                         <Question question={question} />
                     </div>
@@ -66,7 +74,7 @@ function Game (){
                         <Answers answers={answers} handle={ handleQuestionAnswer } />
                     </div>
                 </div>
-                <div className="col-3">
+                <div className="col-sm-12 col-md-3">
                     <Stages stages={stages} currentStageNumber={currentStage} />
                 </div>
             </div>
