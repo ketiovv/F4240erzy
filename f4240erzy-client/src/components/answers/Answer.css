@@ -1,7 +1,14 @@
 .answer {
     text-align: center;
-    border: 1px solid black;
+    border: 2px solid #d9bf00;
     margin-bottom: 10px;
+    color: white;
+    font-size: 2.8vw;
+    font-weight: 500;
+}
+
+.answer p {
+    margin-bottom: 0;
 }
 
 .answer:hover {
@@ -14,4 +21,9 @@
 
 .correct {
     background-color: lightgreen;
+}
+
+.answers {
+    padding-left: 1em;
+    padding-right: 1em;
 }

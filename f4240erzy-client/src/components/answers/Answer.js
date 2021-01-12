@@ -5,9 +5,9 @@ const Answer = ({ content, correct, handle }) => {
     return(
         <div className="col-6">
             <div className={ correct != true ? "answer" : "answer correct"} onClick={ () => handle(correct) }>
-                <h2>
+                <p>
                     {content}
-                </h2>
+                </p>
             </div>
         </div>
     )
