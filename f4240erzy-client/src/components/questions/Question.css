@@ -1,6 +1,7 @@
 .current-question {
-    background-color: aquamarine;
-    padding: 3em;
-    margin: 1em;
+    padding: 2em;
     text-align: center;
+    color: white;
+    font-size: 3.2vw;
+    font-weight: 400;
 }
