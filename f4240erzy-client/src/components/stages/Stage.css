@@ -1,0 +1,34 @@
+.stages-background {
+    padding: 1em;
+}
+
+.stage {
+    color: #d9bf00;
+    margin-bottom: 0.1em;
+    padding: 0.2em;
+}
+
+.active {
+    background: #b39d00;
+    color: white;
+}
+
+.stage-number {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.stage-amount {
+    font-style: italic;
+    font-size: 1.2em;
+}
+
+@media(min-width: 1140px) {
+    .stage-number {
+        font-size: 1.6em;
+        margin-right: 1em;
+    }
+    .stage-amount {
+        font-size: 1.6em;
+    }
+}
