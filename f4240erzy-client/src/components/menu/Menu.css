@@ -1,0 +1,73 @@
+.title {
+    color: #d9bf00;
+    text-align: center;
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+    font-size: 6vw;
+    font-weight: 600;
+}
+
+.about-title {
+    color: #d9bf00;
+    text-align: center;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    font-size: 6vw;
+    font-weight: 600;
+}
+
+.my-text {
+    color: white;
+    text-align: center;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    font-size: 3vw;
+    font-weight: 600;
+}
+
+.menu-button {
+    color: white;
+    text-align: center;
+    border: 1px solid #d9bf00;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    font-size: 3vw;
+    margin-left: 2.5em;
+    margin-right: 2.5em;
+    font-weight: 500;
+}
+
+.about-button {
+    color: white;
+    text-align: center;
+    border: 1px solid #d9bf00;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    font-size: 3vw;
+    margin-left: 2.5em;
+    margin-right: 2.5em;
+    font-weight: 500;
+}
+
+.about-button:hover {
+    background-color: #d9bf00;
+    color: white;
+    cursor: pointer;
+}
+
+.menu-button:hover {
+    background-color: #d9bf00;
+    color: white;
+    cursor: pointer;
+}
+
+@media(max-width: 550px) {
+    .title {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    .menu-button {
+        margin-top: 30px;
+        font-size: 15px;
+    }
+}

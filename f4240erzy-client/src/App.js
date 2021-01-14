@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
-import Game from './components/game/Game';
+import Menu from './components/menu/Menu';
+import './App.css'
+
 
 class App extends Component {
     render () {
         return(
-            <Game />
+            <Menu />
         );
     }
 }
-
 export default App;
