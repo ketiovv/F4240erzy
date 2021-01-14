@@ -4,8 +4,7 @@ import Question from '../questions/Question';
 import Stages from '../stages/Stages';
 import "./Game.css"
 
-// class component
-function Game (){
+const Game = ({backToMenu}) => {
     const [currentStage, setCurrentStage] = useState(1)
     const [stages, setStages] = useState([])
     const [question, setQuestion] = useState(null);
@@ -58,6 +57,7 @@ function Game (){
                 getQuestionForStage(nextStage);
             }
         } else {
+            backToMenu();
             setCurrentStage(1);
             getQuestionForStage(1);
         }
