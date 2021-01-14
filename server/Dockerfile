@@ -7,6 +7,6 @@ COPY package.json /app
 
 COPY . /app
 
-RUN npm install --silent
+RUN npm install
 
 CMD ["npm", "start"]
