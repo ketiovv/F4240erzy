@@ -38,3 +38,17 @@ const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`);
 });
+
+const {exec} = require('child_process');
+
+new Promise((resolve, reject) => {
+    const migrate = exec(
+        'cd app; npx sequelize-cli db:seed:all;' ,
+        {env: process.env},
+        err => (err ? reject(err): resolve())
+    );
+
+    // Forward stdout+stderr to this process
+    migrate.stdout.pipe(process.stdout);
+    migrate.stderr.pipe(process.stderr);
+});
