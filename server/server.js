@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const db = require("./app/models");
 
 // sync all models with db -> auto generate tables
-db.sequelize.sync();
+db.sequelize.sync({force: true});
 
 // stage routes
 require("./app/routes/stage.routes.js")(app);
