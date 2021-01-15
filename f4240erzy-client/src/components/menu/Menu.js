@@ -17,10 +17,10 @@ function Menu(){
                     F424erzy
                 </div>
                 <div className="menu-button" onClick={() => setView(2)}>
-                    New game
+                    Zagraj
                 </div>
                 <div className="menu-button" onClick={() => setView(3)}>
-                    About
+                    Info
                 </div>
             </div>
         )
