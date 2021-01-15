@@ -2,6 +2,7 @@ import React, { useEffect, useState }  from 'react';
 import Answers from '../answers/Answers';
 import Question from '../questions/Question';
 import Stages from '../stages/Stages';
+import MyModal from './MyModal';
 import "./Game.css"
 
 const Game = ({backToMenu}) => {
@@ -9,6 +10,8 @@ const Game = ({backToMenu}) => {
     const [stages, setStages] = useState([])
     const [question, setQuestion] = useState(null);
     const [answers, setAnswers] = useState([])
+    const [modalShow, setModalShow] = React.useState(false);
+
 
     useEffect(() => {
         getAllStages();
@@ -68,6 +71,10 @@ const Game = ({backToMenu}) => {
             <div className="row">
                 <div className="col-sm-12 col-md-9">
                     <div className="row">
+                    <button variant="primary" onClick={() => setModalShow(true)}>
+                        Launch vertically centered modal
+                    </button>
+                    <MyModal show={modalShow} onHide={() => setModalShow(false)} />
                         <Question question={question} />
                     </div>
                     <div className="row">
