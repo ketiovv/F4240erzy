@@ -80,7 +80,181 @@ module.exports = {
         let addedStages = await queryInterface.bulkInsert('stages', stages, {});
 
 
-        let questions = [{
+        let questions = [
+            {
+                id: 1,
+                contentOfQuestion: "Co NIE jest prawdą o Bootstrapie?",
+                stageId: 1,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                id: 2,
+                contentOfQuestion: "Na ile kolumn jest podzielona responsywna siatka bootstrapowa?",
+                stageId: 1,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                id: 3,
+                contentOfQuestion: "Za co odpowiada reboot w Bootstrapie?",
+                stageId: 1,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                id: 4,
+                contentOfQuestion: "Na jakim języku opiera się Angular?",
+                stageId: 1,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            //stage 2
+            {
+                id: 5,
+                contentOfQuestion: "Jakiego dekoratora używa się w celu stworzenia nowego modułu w Angularze?",
+                stageId: 2,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                id: 6,
+                contentOfQuestion: "Jakiego polecenia należy użyć w celu stworzenia nowego projektu Angular?",
+                stageId: 2,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                id: 7,
+                contentOfQuestion: "Czym zasadniczo jest Materialize?",
+                stageId: 2,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                id: 8,
+                contentOfQuestion: "Czym był inspirowany Material Design?",
+                stageId: 2,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            //stage 3
+            {
+                id: 9,
+                contentOfQuestion: "Jak Materialize obsługuje układ kolumnowy?\n",
+                stageId: 3,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                id: 10,
+                contentOfQuestion: "Co oznacza AMD w Dojo JS?",
+                stageId: 3,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                id: 11,
+                contentOfQuestion: "Jaka funkcja służy do ładowania modułów w Dojo Toolkit?",
+                stageId: 3,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                id: 12,
+                contentOfQuestion: "W której wersji Dojo porzucono nazwę toolkit?",
+                stageId: 3,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            //stage 4
+            {
+                id: 13,
+                contentOfQuestion: "Jaki framework wykorzystuje LayoutIt:",
+                stageId: 4,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                id: 14,
+                contentOfQuestion: "Do ilu musi sumować się liczba jednostek w rzędzie (Grid):",
+                stageId: 4,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                id: 15,
+                contentOfQuestion: "Jakie są opcje pobrania projektu z seriwsu LayoutIt:",
+                stageId: 4,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                id: 16,
+                contentOfQuestion: "Czy do używania Drag & Drop API wymagane jest użycie biblioteki jQuery?",
+                stageId: 4,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            // stage 5
+            {
+                id: 17,
+                contentOfQuestion: "Kiedy wywoływane jest zdarzenie dragLeave?",
+                stageId: 5,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                id: 18,
+                contentOfQuestion: "Jaki atrybut należy nadać strefie upuszczenia przeciąganego elementu?",
+                stageId: 5,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                id: 19,
+                contentOfQuestion: " Które z wymienionych NIE jest zaletą Vue?",
+                stageId: 5,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                id: 20,
+                contentOfQuestion: "Jacy są główni konkurenci Vue?",
+                stageId: 5,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            //stage 6
+            {
+                id: 21,
+                contentOfQuestion: "Kiedy wywoływane jest zdarzenie dragLeave?",
+                stageId: 6,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                id: 22,
+                contentOfQuestion: "Jaki atrybut należy nadać strefie upuszczenia przeciąganego elementu?",
+                stageId: 6,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                id: 23,
+                contentOfQuestion: " Które z wymienionych NIE jest zaletą Vue?",
+                stageId: 6,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                id: 24,
+                contentOfQuestion: "Jacy są główni konkurenci Vue?",
+                stageId: 6,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
                 // stage 7
                 id: 25,
                 contentOfQuestion: "Czym jest Electron?",
@@ -262,6 +436,695 @@ module.exports = {
 
 
         let answers = [
+            // question 1
+            {
+                contentOfAnswer: "Składa się m. in. z plików napisanych w CSS.",
+                correct: false,
+                questionId: 1,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "Składa się m. in. z plików napisanych w JavaScript.",
+                correct: false,
+                questionId: 1,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "Jest backendowym frameworkiem.",
+                correct: true,
+                questionId: 1,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "Jest frontendowym frameworkiem.",
+                correct: false,
+                questionId: 1,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            // question 2
+            {
+                contentOfAnswer: "10",
+                correct: false,
+                questionId: 2,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "12",
+                correct: true,
+                questionId: 2,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "14",
+                correct: false,
+                questionId: 2,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "16",
+                correct: false,
+                questionId: 2,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            // question 3
+            {
+                contentOfAnswer: "za inicjalizację zmiennych",
+                correct: false,
+                questionId: 3,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "za wczytanie zewnętrznych zależności",
+                correct: false,
+                questionId: 3,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "za zmianę stylów domyślnych",
+                correct: true,
+                questionId: 3,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "za restart strony po awarii",
+                correct: false,
+                questionId: 3,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            // question 4
+            {
+                contentOfAnswer: "TypeScript",
+                correct: true,
+                questionId: 4,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "Java",
+                correct: false,
+                questionId: 4,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "Python",
+                correct: false,
+                questionId: 4,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "Ruby",
+                correct: false,
+                questionId: 4,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            // question 5
+            {
+                contentOfAnswer: "@Component",
+                correct: false,
+                questionId: 5,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "@Pipe",
+                correct: false,
+                questionId: 5,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "@NgModule",
+                correct: true,
+                questionId: 5,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "@HostBinding",
+                correct: false,
+                questionId: 5,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            // question 6
+            {
+                contentOfAnswer: "ng generate",
+                correct: false,
+                questionId: 6,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "ng new",
+                correct: true,
+                questionId: 6,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "ng serve",
+                correct: false,
+                questionId: 6,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "ng test",
+                correct: false,
+                questionId: 6,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            // question 7
+            {
+                contentOfAnswer: "arkuszem stylów",
+                correct: true,
+                questionId: 7,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "pluginem do edytora tekstoweg",
+                correct: false,
+                questionId: 7,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "środowiskiem graficznym do projektowania stron",
+                correct: false,
+                questionId: 7,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            // question 8
+            {
+                contentOfAnswer: "metalem i drewnemw",
+                correct: false,
+                questionId: 8,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "kredą",
+                correct: false,
+                questionId: 8,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "farbą olejną",
+                correct: false,
+                questionId: 8,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "papierem i atramentem",
+                correct: true,
+                questionId: 8,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            // question 9
+            {
+                contentOfAnswer: "za pomocą display: grid",
+                correct: false,
+                questionId: 9,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "za pomocą display: flex",
+                correct: false,
+                questionId: 9,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "za pomocą position: relative/absolute",
+                correct: false,
+                questionId: 9,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "za pomocą margin,left,right",
+                correct: true,
+                questionId: 9,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            // question 10
+            {
+                contentOfAnswer: "Asynchronous Module Definition",
+                correct: true,
+                questionId: 10,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "Asynchronous Member Definition",
+                correct: false,
+                questionId: 10,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "Automatic Member Definition",
+                correct: false,
+                questionId: 10,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "Automatic Module Definition",
+                correct: false,
+                questionId: 10,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            // question 11
+            {
+                contentOfAnswer: "define",
+                correct: false,
+                questionId: 11,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "import",
+                correct: false,
+                questionId: 11,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "require",
+                correct: true,
+                questionId: 11,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "load",
+                correct: false,
+                questionId: 11,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            // question 12
+            {
+                contentOfAnswer: "1.5",
+                correct: false,
+                questionId: 12,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "2.0",
+                correct: true,
+                questionId: 12,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "2.5",
+                correct: false,
+                questionId: 12,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "3.0",
+                correct: false,
+                questionId: 12,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            // question 13
+            {
+                contentOfAnswer: "Foundation",
+                correct: false,
+                questionId: 13,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "Bootstrap",
+                correct: true,
+                questionId: 13,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "Materialize",
+                correct: false,
+                questionId: 13,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "Material UI",
+                correct: false,
+                questionId: 13,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            // question 14
+            {
+                contentOfAnswer: "5",
+                correct: false,
+                questionId: 14,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "12",
+                correct: true,
+                questionId: 14,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "17",
+                correct: false,
+                questionId: 14,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: " 20",
+                correct: false,
+                questionId: 14,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            // question 15
+            {
+                contentOfAnswer: "Nie da się pobrać",
+                correct: false,
+                questionId: 15,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "Można pobrać tylko HTML",
+                correct: false,
+                questionId: 15,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "Można pobrać tylko Zip całego projektu",
+                correct: false,
+                questionId: 15,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "Można pobrać HTML lub cały projekt w Zip",
+                correct: true,
+                questionId: 15,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            // question 16
+            {
+                contentOfAnswer: "Tak, zawsze",
+                correct: false,
+                questionId: 16,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "Tak, kiedy używamy HTML5",
+                correct: false,
+                questionId: 16,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "Tak, gdy chcemy obsługiwać upuszczanie plików",
+                correct: false,
+                questionId: 16,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "Nie",
+                correct: true,
+                questionId: 16,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            // question 17
+            {
+                contentOfAnswer: "Kiedy element zostanie upuszczony w prawidłowej strefie zrzutu",
+                correct: false,
+                questionId: 17,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "Zawsze kiedy zakończy się operacja przeciągania",
+                correct: false,
+                questionId: 17,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "Kiedy element opuszcza prawidłową strefę zrzutu",
+                correct: true,
+                questionId: 17,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "Kiedy element opuszcza swoją pierwotną pozycję",
+                correct: false,
+                questionId: 17,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            // question 18
+            {
+                contentOfAnswer: "draggable=”true”",
+                correct: false,
+                questionId: 18,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "editable=”true”",
+                correct: false,
+                questionId: 18,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "dropZone=”true”",
+                correct: false,
+                questionId: 18,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "Żaden",
+                correct: true,
+                questionId: 18,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            // question 19
+            {
+                contentOfAnswer: "Prostota",
+                correct: false,
+                questionId: 19,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "Elastyczność",
+                correct: true,
+                questionId: 19,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "Rozmiar",
+                correct: false,
+                questionId: 19,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "Szybkość",
+                correct: false,
+                questionId: 19,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            // question 20
+            {
+                contentOfAnswer: "Django, Jquery",
+                correct: false,
+                questionId: 20,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "Angular, React",
+                correct: true,
+                questionId: 20,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "Bootstrap, Dojo",
+                correct: false,
+                questionId: 20,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "React, Jquery",
+                correct: false,
+                questionId: 20,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            // question 21
+            {
+                contentOfAnswer: "Obiekty",
+                correct: true,
+                questionId: 21,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "Metody",
+                correct: false,
+                questionId: 21,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "Wartości obliczane dynamicznie",
+                correct: false,
+                questionId: 21,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "Nie ma takiego pola",
+                correct: false,
+                questionId: 21,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            // question 22
+            {
+                contentOfAnswer: "pliki graficzne",
+                correct: false,
+                questionId: 22,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "pliki wykonywalne",
+                correct: false,
+                questionId: 22,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "pliki tekstowe",
+                correct: true,
+                questionId: 22,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "archiwa skompresowanych plików",
+                correct: false,
+                questionId: 22,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            // question 23
+            {
+                contentOfAnswer: "4 Megabajty",
+                correct: false,
+                questionId: 23,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "4 Kilobajty",
+                correct: true,
+                questionId: 23,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "16 Megabajtów",
+                correct: false,
+                questionId: 23,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "16 Kilobajtów",
+                correct: false,
+                questionId: 23,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            // question 24
+            {
+                contentOfAnswer: "Sami ustawiamy datę przechowywania",
+                correct: false,
+                questionId: 24,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "Do czasu zamknięcia karty",
+                correct: true,
+                questionId: 24,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "Nie ma limitu czasu",
+                correct: false,
+                questionId: 24,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "24 godziny",
+                correct: false,
+                questionId: 24,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
             // question 25
             {
                 contentOfAnswer: "Frameworkiem do tworzenia aplikacji mobilnych",
@@ -967,6 +1830,8 @@ module.exports = {
         console.log(addedQuestions)
     },
     down: async(queryInterface, Sequelize) => {
-        return queryInterface.bulkDelete('stages', null, {});
+        await queryInterface.bulkDelete('stages', null, {});
+        await queryInterface.bulkDelete('questions', null, {});
+        return queryInterface.bulkDelete('answers', null, {});
     }
 };
