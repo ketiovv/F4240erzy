@@ -12,7 +12,8 @@
 }
 
 .answer:hover {
-    background-color: gray;
+    background-color: #d9bf00;
+    color: white;
 }
 
 .answer:active {
