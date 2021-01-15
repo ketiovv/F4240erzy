@@ -80,8 +80,7 @@ module.exports = {
         let addedStages = await queryInterface.bulkInsert('stages', stages, {});
 
 
-        let questions = [
-            {
+        let questions = [{
                 id: 1,
                 contentOfQuestion: "Co NIE jest prawdą o Bootstrapie?",
                 stageId: 1,
@@ -627,6 +626,13 @@ module.exports = {
             },
             {
                 contentOfAnswer: "środowiskiem graficznym do projektowania stron",
+                correct: false,
+                questionId: 7,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            },
+            {
+                contentOfAnswer: "tłumaczem kodu xaml na html",
                 correct: false,
                 questionId: 7,
                 createdAt: new Date(),
