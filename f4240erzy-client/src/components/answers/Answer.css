@@ -14,6 +14,7 @@
 .answer:hover {
     background-color: #d9bf00;
     color: white;
+    cursor: pointer;
 }
 
 .answer:active {

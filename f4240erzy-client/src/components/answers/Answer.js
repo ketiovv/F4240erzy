@@ -3,9 +3,9 @@ import './Answer.css'
 
 const Answer = ({ content, correct, handle }) => {
     return(
-        <div className="col-6">
+        <div className="col-12">
             {/* 
-            Cheat version ;)
+            Cheat version
             <div className={ correct!=true ? "answer" : "answer correct"} onClick={ () => handle(correct) }> 
             */}
             <div className="answer" onClick={ () => handle(correct) }>
