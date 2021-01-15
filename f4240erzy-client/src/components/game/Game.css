@@ -1,0 +1,13 @@
+.bg-f4240erzy {
+    background-color: rgb(6, 3, 94);
+    color: white;
+    border: 1px solid #d9bf00;
+}
+
+.close {
+    color: white !important;
+}
+
+.close:hover {
+    color: white !important;
+}
