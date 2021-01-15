@@ -10,7 +10,8 @@ const Game = ({backToMenu}) => {
     const [stages, setStages] = useState([])
     const [question, setQuestion] = useState(null);
     const [answers, setAnswers] = useState([])
-    const [modalShow, setModalShow] = React.useState(false);
+    const [modalShow, setModalShow] = useState(false);
+    const [winner, setWinner] = useState(false);
 
 
     useEffect(() => {
@@ -54,15 +55,24 @@ const Game = ({backToMenu}) => {
                 getQuestionForStage(nextStage);
             }
             else{
-                alert("wygrales")
-                const nextStage = 1;
-                setCurrentStage(nextStage);
-                getQuestionForStage(nextStage);
+                setWinner(true);
+                setModalShow(true);
+                setTimeout(function () {
+                    backToMenu();
+                    setWinner(false)
+                    const nextStage = 1;
+                    setCurrentStage(nextStage);
+                    getQuestionForStage(nextStage);
+                }, 3000);
             }
         } else {
-            backToMenu();
-            setCurrentStage(1);
-            getQuestionForStage(1);
+            setModalShow(true)
+            setTimeout(function () {
+                backToMenu();
+                setCurrentStage(1);
+                getQuestionForStage(1);
+            }, 3000);
+            
         }
     }
 
@@ -71,10 +81,10 @@ const Game = ({backToMenu}) => {
             <div className="row">
                 <div className="col-sm-12 col-md-9">
                     <div className="row">
-                    <button variant="primary" onClick={() => setModalShow(true)}>
+                    {/* <button className="btn btn-primary" onClick={() => setModalShow(true)}>
                         Launch vertically centered modal
-                    </button>
-                    <MyModal show={modalShow} onHide={() => setModalShow(false)} />
+                    </button> */}
+                    <MyModal show={modalShow} onHide={() => setModalShow(false)} winner={winner}/>
                         <Question question={question} />
                     </div>
                     <div className="row">
