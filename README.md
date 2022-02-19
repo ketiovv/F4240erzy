@@ -22,7 +22,6 @@ This is because the questions are about IT.
 1. Server: In main repo folder run commands:
 - `docker compose build`
 - `docker compose up -d`
-2. Seed database:
 2. Client: In folder `f4240erzy-client` run commands
 - npm install
 - npm start
