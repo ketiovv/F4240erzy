@@ -13,6 +13,7 @@ function Menu(){
     if (view == 1) {
         return(
             <div className="container">
+                <title>F4240erzy</title>
                 <div className="title">
                     F424erzy
                 </div>
